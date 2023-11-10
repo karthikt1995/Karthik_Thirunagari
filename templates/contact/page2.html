@@ -1,0 +1,51 @@
+{% load static %}
+{% include "contact/sidebar.html" %}
+{% include "contact/head.html" %}
+<link rel="stylesheet" href="{% static 'contact/style.css' %}">
+<section class="vh-100 gradient-custom">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="container register">
+          <div class="row">
+            <div class="col-md-3 register-left">
+            </div>
+            <div class="col-md-9 register-right">
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <h3 class="register-heading text-center" style="color: red; font-weight: bold;">Contact Management</h3>
+                  <button class="btn btn-primary" id="createContactBtn">Create Contact</button>
+                  <div id="contactTableDiv" style="margin-top: 20px;">
+                    <!-- Table for displaying contact details -->
+                    <table class="table table-striped" style="background-color: #f8d7da; color: #721c24;">
+                      <thead>
+                        <tr>
+                          <th>Contact Name</th>
+                          <th>Email ID</th>
+                          <th>Created Time</th>
+                          <!-- Add more columns as needed -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Add rows with contact details dynamically here -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "contact/footer.html" %}
+
+<script>
+  // JavaScript to handle button click and show/hide table
+  document.getElementById('createContactBtn').addEventListener('click', function () {
+    document.getElementById('contactTableDiv').style.display = 'block';
+  });
+</script>
