@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'contact/styles.css' %}">
+
+    <title>Contact List</title>
+    <!-- Add your CSS styles here if needed -->
+</head>
+<body>
+
+<div class="container">
+    <h1 class="center-heading">Contact Management</h1>
+    <div class="button-container">
+        <a href=""><button class="create-contact-btn">Create Contact</button></a>
+    </div>
+
+    <table border="1" class="contact-table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Contact Name</th>
+                <th>Email</th>
+                <th>Time Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.serial_number }}</td>
+                <td>{{ contact.contact_name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.date_created }}</td>
+                <td>
+                    <a href="">Edit</a>
+                    <a href="">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p class="copyright"> &copy; Created by Karthik Thirunagari</p>
+</div>
+
+</body>
+</html>

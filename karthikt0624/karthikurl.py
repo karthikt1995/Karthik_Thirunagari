@@ -1,11 +1,11 @@
 from django.urls import path,re_path
 from .import views
-
+from .views import startpage 
 urlpatterns=[
 
     path('message/',views.index),
+    path('startpage/', startpage, name='startpage'),
 
-    path('page2/', views.page2,name='page2'),
-    path('createcontact/', views.createcontact,name='createcontact'),
+    
 
 ]

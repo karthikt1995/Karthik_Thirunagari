@@ -21,3 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('karthikt0624/', include('karthikt0624.karthikurl')),
 ]
+
+
