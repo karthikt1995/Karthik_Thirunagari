@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'contact/formstyle.css' %}">
+
+    <title>Create Contact</title>
+    <!-- Add your CSS styles here if needed -->
+</head>
+<body>
+
+<div class="container">
+    <h1 class="center-heading">Create Contact</h1>
+    
+    <form method="post" action="{% url 'create_contact' %}">
+        {% csrf_token %}
+        
+        {% if form.non_field_errors %}
+            <div class="error-message">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <label for="contact_name">Contact Name:</label>
+        <input type="text" name="contact_name" value="{{ form.cleaned_data.contact_name }}" required>
+        {% if form.contact_name.errors %}
+            <div class="error-message">
+                {{ form.contact_name.errors.0 }}
+            </div>
+        {% endif %}<br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ form.cleaned_data.email }}" required>
+        {% if form.email.errors %}
+            <div class="error-message">
+                {{ form.email.errors.0 }}
+            </div>
+        {% endif %}<br>
+
+        <label for="notes">Notes:</label>
+        <textarea name="notes" rows="4" cols="50" required>{{ form.cleaned_data.notes }}</textarea>
+        {% if form.notes.errors %}
+            <div class="error-message">
+                {{ form.notes.errors.0 }}
+            </div>
+        {% endif %}<br>
+
+        <button type="submit">Create Contact</button>
+        <a href="{% url 'startpage' %}"><button type="button">Cancel</button></a>
+    </form>
+
+    <p class="copyright"> &copy; Created by Karthik</p>
+
+    <a href="{% url 'startpage' %}">Back to StartPage</a>
+</div>
+
+</body>
+</html>

@@ -19,4 +19,10 @@ class ContactForm(forms.ModelForm):
         if Contact.objects.filter(email=email).exists():
             raise ValidationError("Contact with this email already exists.")
         return email
+    
+    def clean_notes(self):
+        # Add any specific validation for the notes field if needed
+        notes = self.cleaned_data.get('notes')
+        # Your validation logic here
+        return notes
 

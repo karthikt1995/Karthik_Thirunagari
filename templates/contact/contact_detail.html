@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'contact/formstyle.css' %}">
+
+    <title>Contact Detail</title>
+    <!-- Add your CSS styles here if needed -->
+</head>
+<body>
+
+<div class="container">
+    <h1 class="center-heading">Contact Detail</h1>
+    
+    {% block content %}
+    <div class="contact-details">
+        
+        <p><strong>No:</strong> {{ contact.serial_number }}</p>
+        <p><strong>Contact Name:</strong> {{ contact.contact_name }}</p>
+        <p><strong>Email:</strong> {{ contact.email }}</p>
+        <p><strong>Notes:</strong> {{ contact.notes }}</p>
+        <p><strong>Time Created:</strong> {{ contact.date_created }}</p>
+
+        <div class="buttons">
+            <a href="{% url 'update_contact' contact.serial_number %}">
+                <button class="edit-btn">Edit</button>
+            </a>
+            <a href="{% url 'delete_contact' contact.serial_number %}">
+                <button class="delete-btn">Delete</button>
+            </a>
+            <a href="{% url 'startpage' %}">
+                <button class="cancel-btn">Cancel</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+<div class="footer">
+    <p class="copyright"> &copy; Created by Jincy</p>
+  </div>
+  
+  </div>
+  
+  </body>
+  </html>

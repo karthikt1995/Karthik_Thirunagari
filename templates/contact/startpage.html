@@ -15,7 +15,7 @@
 <div class="container">
     <h1 class="center-heading">Contact Management</h1>
     <div class="button-container">
-        <a href=""><button class="create-contact-btn">Create Contact</button></a>
+        <a href="{% url 'create_contact'%}"><button class="create-contact-btn">Create Contact</button></a>
     </div>
 
     <table border="1" class="contact-table">
@@ -38,7 +38,8 @@
                 <td>{{ contact.notes }}</td>
                 <td>{{ contact.date_created }}</td>
                 <td>
-                    <a href="">Detail</a>
+                    <a href="{% url 'contact_detail' contact.serial_number %}">Detail</a>
+
 
                     <a href="">Edit</a>
                     <a href="">Delete</a>

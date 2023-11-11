@@ -1,0 +1,125 @@
+/ contactapp/static/contactapp/create_contact_styles.css /
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.center-heading {
+    color: #3498db;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: inline-block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    width: 30%; / Adjust the width as needed /
+}
+
+input {
+    display: inline-block;
+    width: 65%; / Adjust the width as needed /
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
+.copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #27ae60; / Green color for the copyright text /
+    font-size: 15px;
+    font-weight: bold; / Bold text /
+
+}
+
+
+/ Add or modify these styles in your CSS file /
+.back-link {
+    display: inline-block;
+    margin-right: 10px; / Adjust the margin as needed /
+}
+
+.footer {
+    margin-top: 20px; / Adjust the margin as needed /
+    text-align: center;
+}
+
+
+/ Add your existing styles here /
+
+.contact-details {
+    margin: 20px;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.edit-btn, .delete-btn, .cancel-btn {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: black;
+}
