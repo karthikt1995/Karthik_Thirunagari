@@ -24,6 +24,7 @@
                 <th>No</th>
                 <th>Contact Name</th>
                 <th>Email</th>
+                <th>Notes</th>
                 <th>Time Created</th>
                 <th>Actions</th>
             </tr>
@@ -34,8 +35,11 @@
                 <td>{{ contact.serial_number }}</td>
                 <td>{{ contact.contact_name }}</td>
                 <td>{{ contact.email }}</td>
+                <td>{{ contact.notes }}</td>
                 <td>{{ contact.date_created }}</td>
                 <td>
+                    <a href="">Detail</a>
+
                     <a href="">Edit</a>
                     <a href="">Delete</a>
                 </td>
@@ -44,7 +48,7 @@
         </tbody>
     </table>
 
-    <p class="copyright"> &copy; Created by Karthik Thirunagari</p>
+    <p class="copyright"> &copy; Created by Karthik</p>
 </div>
 
 </body>
