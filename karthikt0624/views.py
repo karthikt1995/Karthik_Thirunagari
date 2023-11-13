@@ -29,3 +29,18 @@ def create_contact(request):
         form = ContactForm()
 
     return render(request, 'contact/create_contact.html', {'form': form})
+
+#update contact
+
+def update_contact(request, serial_number):
+    contact = get_object_or_404(Contact, serial_number=serial_number)
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST, instance=contact)
+        if form.is_valid():
+            form.save()
+            return redirect('startpage')
+    else:
+        form = ContactForm(instance=contact)
+
+    return render(request, 'contact/update_contact.html', {'form': form, 'contact': contact})

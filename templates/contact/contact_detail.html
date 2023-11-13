@@ -25,7 +25,7 @@
         <p><strong>Time Created:</strong> {{ contact.date_created }}</p>
 
         <div class="buttons">
-            <a href="">
+            <a href="{% url 'update_contact' contact.serial_number %}">
                 <button class="edit-btn">Edit</button>
             </a>
             <a href="">

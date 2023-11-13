@@ -39,9 +39,11 @@
                 <td>{{ contact.date_created }}</td>
                 <td>
                     <a href="{% url 'contact_detail' contact.serial_number %}">Detail</a>
+                    <a href="{% url 'update_contact' contact.serial_number %}">Edit</a>
 
 
-                    <a href="">Edit</a>
+
+                
                     <a href="">Delete</a>
                 </td>
             </tr>
