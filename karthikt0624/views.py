@@ -10,13 +10,15 @@ def index(request):
     return HttpResponse("HELLO Karthik")
 #Create your views here.
 #Create your views here.
-
+#main page or start page
 def startpage(request):
     contacts = Contact.objects.all()
     return render(request, 'contact/startpage.html', {'contacts': contacts})
+#contact details 
 def contact_detail(request, serial_number):
     contact = get_object_or_404(Contact, serial_number=serial_number)
     return render(request, 'contact/contact_detail.html', {'contact': contact})
+#create contact page
 def create_contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
