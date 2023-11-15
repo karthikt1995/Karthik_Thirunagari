@@ -28,7 +28,7 @@
             <a href="{% url 'update_contact' contact.serial_number %}">
                 <button class="edit-btn">Edit</button>
             </a>
-            <a href="">
+            <a href="{% url 'delete_contact' contact.serial_number %}">
                 <button class="delete-btn">Delete</button>
             </a>
             <a href="{% url 'startpage' %}">

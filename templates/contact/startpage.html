@@ -41,10 +41,11 @@
                     <a href="{% url 'contact_detail' contact.serial_number %}">Detail</a>
                     <a href="{% url 'update_contact' contact.serial_number %}">Edit</a>
 
+                    <a href="{% url 'delete_contact' contact.serial_number %}">Delete</a>
 
 
                 
-                    <a href="">Delete</a>
+                    
                 </td>
             </tr>
             {% endfor %}

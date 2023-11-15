@@ -44,3 +44,11 @@ def update_contact(request, serial_number):
         form = ContactForm(instance=contact)
 
     return render(request, 'contact/update_contact.html', {'form': form, 'contact': contact})
+def delete_contact(request, serial_number):
+    contact = get_object_or_404(Contact, serial_number=serial_number)
+
+    if request.method == 'POST':
+        contact.delete()
+        return redirect('startpage')
+
+    return render(request, 'contact/delete_contact.html', {'contact': contact})

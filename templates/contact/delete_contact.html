@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'contact/formstyle.css' %}">
+
+    <title>Confirm Contact</title>
+    <!-- Add your CSS styles here if needed -->
+</head>
+<body>
+  <div class="container">
+{% block content %}
+  <h1>Delete Contact</h1>
+  <p>Are you sure you want to delete contact {{ contact.contact_name }}?</p>
+  <form method="post" action="{% url 'delete_contact' contact.serial_number %}">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+    <a href="{% url 'startpage' %}" class="back-link">
+      <button type="button">Cancel</button></a>
+  </form>
+{% endblock %}
+<div class="footer">
+  <p class="copyright"> &copy; Created by Karthik</p>
+</div>
+
+</div>
+
+</body>
+</html>
