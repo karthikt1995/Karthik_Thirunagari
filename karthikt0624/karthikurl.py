@@ -10,6 +10,7 @@ urlpatterns=[
 
 
     path('update_contact/<int:serial_number>/', update_contact, name='update_contact'),
+    #deletecontacturl
 
     path('delete_contact/<int:serial_number>/', delete_contact, name='delete_contact'),
 
